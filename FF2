@@ -1,0 +1,286 @@
+local ScreenGui = Instance.new("ScreenGui")
+local TweenService = game:GetService("TweenService")
+local MainFrame = Instance.new("Frame")
+local MainCorner = Instance.new("UICorner")
+local LoaderBack = Instance.new("Frame")
+local BackCorner = Instance.new("UICorner")
+local LoaderMain = Instance.new("Frame")
+local LoadCorner = Instance.new("UICorner")
+local MainInfoFrame = Instance.new("Frame")
+local infocornerlol = Instance.new("UICorner")
+local MessageHeader = Instance.new("Frame")
+local HeaderCorner2 = Instance.new("UICorner")
+local RecentlyAdded = Instance.new("TextLabel")
+local AddedInfo = Instance.new("TextLabel")
+local loadingText = Instance.new("TextLabel")
+local Header = Instance.new("Frame")
+local Logo = Instance.new("ImageLabel")
+local ProfileArea = Instance.new("Frame")
+local ProfileCorner = Instance.new("UICorner")
+local ProfilePnkBar = Instance.new("Frame")
+local Profilebarcorner = Instance.new("UICorner")
+local UpdateDateLabel = Instance.new("TextLabel")
+getgenv().executionsLabel = Instance.new("TextLabel")
+local ScriptLabel = Instance.new("TextLabel")
+local ProfileImage = Instance.new("ImageLabel")
+
+-- Properties
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+MainFrame.BorderColor3 = Color3.new(0, 0, 0)
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0.256637156, 0, 0.26526317, 0)
+MainFrame.Size = UDim2.new(0, 660, 0, 445)
+
+MainCorner.Name = "MainCorner"
+MainCorner.Parent = MainFrame
+MainCorner.CornerRadius = UDim.new(0, 6)
+
+LoaderBack.Name = "LoaderBack"
+LoaderBack.Parent = MainFrame
+LoaderBack.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+LoaderBack.BorderColor3 = Color3.new(0, 0, 0)
+LoaderBack.BorderSizePixel = 0
+LoaderBack.Position = UDim2.new(0.954545438, 0, 0.114606738, 0)
+LoaderBack.Size = UDim2.new(0, 12, 0, 360)
+
+BackCorner.Name = "BackCorner"
+BackCorner.Parent = LoaderBack
+
+LoaderMain.Name = "LoaderMain"
+LoaderMain.Parent = LoaderBack
+LoaderMain.BackgroundColor3 = Color3.fromRGB(255, 73, 128)
+LoaderMain.BorderColor3 = Color3.new(0, 0, 0)
+LoaderMain.BorderSizePixel = 0
+LoaderMain.Position = UDim2.new(0, 0, 0.00114606738, 0)
+LoaderMain.Size = UDim2.new(0, 12, 0, 0)
+
+LoadCorner.Name = "LoadCorner"
+LoadCorner.Parent = LoaderMain
+
+MainInfoFrame.Name = "MainInfoFrame"
+MainInfoFrame.Parent = MainFrame
+MainInfoFrame.BackgroundColor3 = Color3.new(0.168627, 0.168627, 0.168627)
+MainInfoFrame.BorderColor3 = Color3.new(1, 1, 1)
+MainInfoFrame.BorderSizePixel = 0
+MainInfoFrame.Position = UDim2.new(0.0303030312, 0, 0.602247179, 0)
+MainInfoFrame.Size = UDim2.new(0, 589, 0, 157)
+
+infocornerlol.Name = "infocornerlol"
+infocornerlol.Parent = MainInfoFrame
+infocornerlol.CornerRadius = UDim.new(0, 6)
+
+MessageHeader.Name = "MessageHeader"
+MessageHeader.Parent = MainInfoFrame
+MessageHeader.BackgroundColor3 = Color3.new(1, 0.286275, 0.501961)
+MessageHeader.BorderColor3 = Color3.new(0, 0, 0)
+MessageHeader.BorderSizePixel = 0
+MessageHeader.Size = UDim2.new(0, 589, 0, 7)
+
+HeaderCorner2.Name = "HeaderCorner2"
+HeaderCorner2.Parent = MessageHeader
+HeaderCorner2.CornerRadius = UDim.new(0, 6)
+
+RecentlyAdded.Name = "RecentlyAdded"
+RecentlyAdded.Parent = MainInfoFrame
+RecentlyAdded.BackgroundColor3 = Color3.new(1, 1, 1)
+RecentlyAdded.BackgroundTransparency = 1
+RecentlyAdded.BorderColor3 = Color3.new(0, 0, 0)
+RecentlyAdded.BorderSizePixel = 0
+RecentlyAdded.Position = UDim2.new(0, 0, 0.0445859879, 0)
+RecentlyAdded.Size = UDim2.new(0, 157, 0, 43)
+RecentlyAdded.Font = Enum.Font.SourceSans
+RecentlyAdded.Text = "Recently added:"
+RecentlyAdded.TextColor3 = Color3.new(1, 1, 1)
+RecentlyAdded.TextSize = 22
+
+AddedInfo.Name = "AddedInfo"
+AddedInfo.Parent = MainInfoFrame
+AddedInfo.BackgroundColor3 = Color3.new(1, 1, 1)
+AddedInfo.BackgroundTransparency = 1
+AddedInfo.BorderColor3 = Color3.new(0, 0, 0)
+AddedInfo.BorderSizePixel = 0
+AddedInfo.Position = UDim2.new(0.0339558572, 0, 0.318471342, 0)
+AddedInfo.Size = UDim2.new(0, 569, 0, 106)
+AddedInfo.Font = Enum.Font.SourceSans
+AddedInfo.Text = "- QB Aimbot\n- WalkSpeed"
+AddedInfo.TextColor3 = Color3.new(1, 1, 1)
+AddedInfo.TextScaled = true
+AddedInfo.TextSize = 14
+AddedInfo.TextWrapped = true
+AddedInfo.TextXAlignment = Enum.TextXAlignment.Left
+AddedInfo.TextYAlignment = Enum.TextYAlignment.Top
+
+loadingText.Name = "loadingText"
+loadingText.Parent = MainFrame
+loadingText.BackgroundColor3 = Color3.new(1, 1, 1)
+loadingText.BackgroundTransparency = 1
+loadingText.BorderColor3 = Color3.new(0, 0, 0)
+loadingText.BorderSizePixel = 0
+loadingText.Position = UDim2.new(0.619696975, 0, 0.539325833, 0)
+loadingText.Size = UDim2.new(0, 200, 0, 28)
+loadingText.Font = Enum.Font.Gotham
+loadingText.Text = "loading..."
+loadingText.TextColor3 = Color3.new(1, 1, 1)
+loadingText.TextScaled = true
+loadingText.TextSize = 14
+loadingText.TextWrapped = true
+loadingText.TextXAlignment = Enum.TextXAlignment.Right
+
+Header.Name = "Header"
+Header.Parent = MainFrame
+Header.BackgroundColor3 = Color3.new(1, 0.286275, 0.501961)
+Header.BorderColor3 = Color3.new(0, 0, 0)
+Header.BorderSizePixel = 0
+Header.Position = UDim2.new(0, 0, 0.0696629211, 0)
+Header.Size = UDim2.new(0, 660, 0, 5)
+
+Logo.Name = "Logo"
+Logo.Parent = MainFrame
+Logo.BackgroundColor3 = Color3.new(1, 1, 1)
+Logo.BackgroundTransparency = 1
+Logo.BorderColor3 = Color3.new(0, 0, 0)
+Logo.BorderSizePixel = 0
+Logo.Position = UDim2.new(0, 0, -0.076404497, 0)
+Logo.Size = UDim2.new(0, 100, 0, 100)
+Logo.Image = "rbxassetid://14389097553"
+
+ProfileArea.Name = "ProfileArea"
+ProfileArea.Parent = MainFrame
+ProfileArea.BackgroundColor3 = Color3.new(0.168627, 0.168627, 0.168627)
+ProfileArea.BorderColor3 = Color3.new(0, 0, 0)
+ProfileArea.BorderSizePixel = 0
+ProfileArea.Position = UDim2.new(0.0303030312, 0, 0.130337074, 0)
+ProfileArea.Size = UDim2.new(0, 254, 0, 195)
+
+ProfileCorner.Name = "ProfileCorner"
+ProfileCorner.Parent = ProfileArea
+ProfileCorner.CornerRadius = UDim.new(0, 6)
+
+ProfilePnkBar.Name = "ProfilePnkBar"
+ProfilePnkBar.Parent = ProfileArea
+ProfilePnkBar.BackgroundColor3 = Color3.new(1, 0.286275, 0.501961)
+ProfilePnkBar.BorderColor3 = Color3.new(0, 0, 0)
+ProfilePnkBar.BorderSizePixel = 0
+ProfilePnkBar.Size = UDim2.new(0, 254, 0, 7)
+
+Profilebarcorner.Name = "Profilebarcorner"
+Profilebarcorner.Parent = ProfilePnkBar
+
+UpdateDateLabel.Name = "UpdateDateLabel"
+UpdateDateLabel.Parent = ProfileArea
+UpdateDateLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+UpdateDateLabel.BackgroundTransparency = 1
+UpdateDateLabel.BorderColor3 = Color3.new(0, 0, 0)
+UpdateDateLabel.BorderSizePixel = 0
+UpdateDateLabel.Position = UDim2.new(0.027559055, 0, 0.856410265, 0)
+UpdateDateLabel.Size = UDim2.new(0, 247, 0, 28)
+UpdateDateLabel.Font = Enum.Font.Gotham
+UpdateDateLabel.Text = "Updated: 8/10/23"
+UpdateDateLabel.TextColor3 = Color3.new(1, 1, 1)
+UpdateDateLabel.TextSize = 14
+UpdateDateLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+executionsLabel.Name = "executionsLabel"
+executionsLabel.Parent = ProfileArea
+executionsLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+executionsLabel.BackgroundTransparency = 1
+executionsLabel.BorderColor3 = Color3.new(0, 0, 0)
+executionsLabel.BorderSizePixel = 0
+executionsLabel.Position = UDim2.new(0.027559055, 0, 0.769230783, 0)
+executionsLabel.Size = UDim2.new(0, 247, 0, 17)
+executionsLabel.Font = Enum.Font.Gotham
+executionsLabel.Text = "Executions: 25"
+executionsLabel.TextColor3 = Color3.new(1, 1, 1)
+executionsLabel.TextSize = 14
+executionsLabel.TextXAlignment = Enum.TextXAlignment.Left
+executionsLabel.TextYAlignment = Enum.TextYAlignment.Bottom
+
+ScriptLabel.Name = "ScriptLabel"
+ScriptLabel.Parent = ProfileArea
+ScriptLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+ScriptLabel.BackgroundTransparency = 1
+ScriptLabel.BorderColor3 = Color3.new(0, 0, 0)
+ScriptLabel.BorderSizePixel = 0
+ScriptLabel.Position = UDim2.new(0.027559055, 0, 0.625641048, 0)
+ScriptLabel.Size = UDim2.new(0, 247, 0, 28)
+ScriptLabel.Font = Enum.Font.Gotham
+ScriptLabel.Text = "Script: FF2"
+ScriptLabel.TextColor3 = Color3.new(1, 1, 1)
+ScriptLabel.TextSize = 14
+ScriptLabel.TextXAlignment = Enum.TextXAlignment.Left
+ScriptLabel.TextYAlignment = Enum.TextYAlignment.Bottom
+
+ProfileImage.Name = "ProfileImage"
+ProfileImage.Parent = ProfileArea
+ProfileImage.BackgroundTransparency = 1
+ProfileImage.BackgroundColor3 = Color3.new(1, 1, 1)
+ProfileImage.BorderColor3 = Color3.new(0, 0, 0)
+ProfileImage.BorderSizePixel = 0
+ProfileImage.Position = UDim2.new(0.027559055, 0, 0.0820512846, 0)
+ProfileImage.Size = UDim2.new(0, 95, 0, 95)
+ProfileImage.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+MainFrame.Position = UDim2.new(0.5, -MainFrame.Size.X.Offset / 2, 0.5, -MainFrame.Size.Y.Offset / 2)
+
+local function EVJB_fake_script()
+	local script = Instance.new('LocalScript', ProfileImage)
+
+	local Players = game:GetService("Players")
+	local player = Players.LocalPlayer
+	local imagelabel = script.Parent
+	imagelabel.Image = Players:GetUserThumbnailAsync(player.UserId,Enum.ThumbnailType.HeadShot,Enum.ThumbnailSize.Size420x420)
+end
+coroutine.wrap(EVJB_fake_script)()
+
+local loadingText = MainFrame.loadingText
+
+wait(1)
+
+local texts = {
+    "Loading Bypasses.",
+    "Authenticating Key..",
+    "Initializing...",
+    "Loaded!"
+}
+
+local LoaderBack = MainFrame.LoaderBack
+local LoaderMain = LoaderBack.LoaderMain
+local targetSize = UDim2.new(0, 12, 0, 360)
+
+local tweenInfo = TweenInfo.new(
+    5.5,
+    Enum.EasingStyle.Quad,
+    Enum.EasingDirection.Out,
+    0,
+    false,
+    0
+)
+
+local tween = TweenService:Create(LoaderMain, tweenInfo, {Size = targetSize})
+
+local currentIndex = 1
+local totalTexts = #texts
+
+local function updateLoadingText()
+    loadingText.Text = texts[currentIndex]
+end
+
+tween:Play()
+
+tween.Completed:Connect(function()
+    currentIndex = totalTexts
+    updateLoadingText()
+    wait(1)
+    ScreenGui:Destroy()
+end)
+
+while true do
+    updateLoadingText()
+    currentIndex = currentIndex % totalTexts + 1
+    wait(1.5)
+end
