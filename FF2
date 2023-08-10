@@ -1,4 +1,4 @@
-if game.PlaceId == 8206123457 then
+if game.PlaceId ~= 8206123457 then
 
 local CoreGui = game:GetService("CoreGui")
 local tbl = {}
