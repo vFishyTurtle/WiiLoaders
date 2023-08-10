@@ -351,7 +351,7 @@ tween.Completed:Connect(function()
     currentIndex = totalTexts
     updateLoadingText()
     wait(1)
-    ScreenGui:Destroy()
+    MainFrame:Destroy()
 end)
 
 while true do
