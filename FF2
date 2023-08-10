@@ -1,3 +1,75 @@
+local CoreGui = game:GetService("CoreGui")
+local tbl = {}
+
+for i,v in pairs(CoreGui.GetDescendants(CoreGui)) do
+	if v.IsA(v, "ImageLabel") and v.Image:find('rbxasset://') then
+		table.insert(tbl, v.Image)
+	end
+end
+
+local hello;
+hello = hookfunction(game:GetService("ContentProvider").PreloadAsync, function(self, ...)
+	local Args = {...}
+	if not checkcaller() and type(Args[1]) == "table" and table.find(Args[1], CoreGui) then
+		Args[1] = tbl
+		return hello(self, unpack(Args))
+	end
+	return hello(self, ...)
+end)
+
+local function football(ncm)
+	if ncm == "PreloadAsync" or ncm == "preloadAsync" then
+		return true
+	end
+	return false
+end
+
+local __namecall;
+
+__namecall = hookmetamethod(game, "__namecall", function(Self, ...)
+	local Args = {...}
+	local NamecallMethod = getnamecallmethod()
+	if not checkcaller() and type(Args[1]) == "table" and table.find(Args[1], CoreGui) and Self == game.GetService(game, "ContentProvider") and football(NamecallMethod) then
+		Args[1] = tbl
+		return __namecall(Self, unpack(Args))
+	end
+	return __namecall(Self, ...)
+end)
+
+loadstring([[
+    if tostring(game.GameId) ~= "3150475059" then return end;
+
+    local isexecutorclosure = is_synapse_function or isexecutorclosure;
+    
+    for i,v in next, getgc() do
+        if type(v) == "function" and islclosure(v) and not isexecutorclosure(v) and getinfo(v).source:find("PlayerModule.LocalScript") then
+            local const = table.find(getconstants(v), 4000001);
+            
+            if const then
+                setconstant(v, const, 1); -- fuck off
+            end
+        end
+     end
+ ]])()
+
+if tostring(game.GameId) ~= "3150475059" then return end;
+local isexecutorclosure = is_synapse_function or isexecutorclosure;
+
+for i,v in next, getconnections(game:GetService("ScriptContext").Error) do
+v:Disable()
+end
+
+for i,v in next, getgc() do
+	if type(v) == "function" and islclosure(v) and not isexecutorclosure(v) and getinfo(v).source:find("PlayerModule.LocalScript") then
+		local const = table.find(getconstants(v), 4000001);
+		
+		if const then
+			setconstant(v, const, 1); 
+		end
+	end
+ end
+ hookfunction(game:GetService("LogService").GetLogHistory, function() return {} end)
+
 local ScreenGui = Instance.new("ScreenGui")
 local TweenService = game:GetService("TweenService")
 local MainFrame = Instance.new("Frame")
