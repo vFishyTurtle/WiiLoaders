@@ -70,7 +70,7 @@ for i,v in next, getgc() do
  end
  hookfunction(game:GetService("LogService").GetLogHistory, function() return {} end)
 
-local ScreenGui = Instance.new("ScreenGui")
+getgenv().ScreenGui = Instance.new("ScreenGui")
 local TweenService = game:GetService("TweenService")
 local MainFrame = Instance.new("Frame")
 local MainCorner = Instance.new("UICorner")
