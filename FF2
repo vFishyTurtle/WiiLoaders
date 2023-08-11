@@ -306,13 +306,6 @@ end
 
 tween:Play()
 
-tween.Completed:Connect(function()
-    currentIndex = totalTexts
-    updateLoadingText()
-    wait(1)
-    MainFrame:Destroy()
-end)
-
 while true do
     updateLoadingText()
     currentIndex = currentIndex % totalTexts + 1
